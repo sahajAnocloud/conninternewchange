@@ -11,10 +11,11 @@ export default function VideoModal({ onClose }: VideoModalProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
+        const currentVideo = videoRef.current;
         return () => {
             // Pause video when modal unmounts
-            if (videoRef.current) {
-                videoRef.current.pause();
+            if (currentVideo) {
+                currentVideo.pause();
             }
         };
     }, []);
