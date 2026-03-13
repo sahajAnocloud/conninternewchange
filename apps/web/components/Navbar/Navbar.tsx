@@ -30,9 +30,9 @@ export default function Navbar() {
                         <Image
                             src="/LOGO CON.png"
                             alt="Conninter Logo"
-                            width={600}
-                            height={160}
-                            style={{ objectFit: 'contain' }}
+                            width={240}
+                            height={64}
+                            style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
                             className={scrolled ? styles.logoScrolled : styles.logoInverted}
                             priority
                         />
@@ -90,6 +90,7 @@ export default function Navbar() {
                         className={styles.hamburger}
                         onClick={() => setMenuOpen(!menuOpen)}
                         aria-label="Toggle menu"
+                        style={{ zIndex: 1001 }}
                     >
                         <span className={menuOpen ? styles.barOpen : ''} />
                         <span className={menuOpen ? styles.barOpen : ''} />
@@ -100,10 +101,13 @@ export default function Navbar() {
                 {/* Mobile Menu */}
                 {menuOpen && (
                     <div className={styles.mobileMenu}>
+                        <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
                         <Link href="/hospitals" onClick={() => setMenuOpen(false)}>Hospitals</Link>
                         <Link href="/#how-it-works" onClick={() => setMenuOpen(false)}>How It Works</Link>
                         <Link href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
-                        <Link href="/auth" className="btn-primary" onClick={() => setMenuOpen(false)}>Get Started</Link>
+                        <Link href="/auth" className="btn-primary" onClick={() => setMenuOpen(false)} style={{ color: 'white' }}>
+                            Get Started
+                        </Link>
                     </div>
                 )}
             </nav>

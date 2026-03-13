@@ -197,23 +197,42 @@
 }
 
 @media (max-width: 768px) {
+    .upper {
+        padding: 60px 0 40px;
+    }
+
     .inner {
         grid-template-columns: 1fr;
-        gap: var(--space-10);
+        gap: var(--space-8);
+        text-align: center;
     }
 
     .brand {
         max-width: 100%;
+        align-items: center;
+    }
+
+    .social {
+        justify-content: center;
+    }
+
+    .col h4 {
+        margin-top: 12px;
+    }
+
+    .bottom {
+        padding: 32px 0;
     }
 
     .bottomInner {
         flex-direction: column;
         text-align: center;
-        gap: var(--space-2);
+        gap: var(--space-4);
     }
 
     .certStrip {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 12px;
     }
 }
